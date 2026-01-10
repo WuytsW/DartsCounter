@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DartsCounter</string>
+    <string name="bullseye">BULL</string>
+    <string name="miss">MISS</string>
+</resources>
