@@ -1,26 +1,29 @@
 package com.example.dartscounter.data;
 
-import android.provider.ContactsContract;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Player {
+public class Player implements Serializable {
     private String name;
-    private Date lastUsed;
+    private long lastUsed; // 0 = never used
 
-    public Player() {} // needed for Gson sometimes
+    public Player(){}
 
     public Player(String name) {
         this.name = name;
+        this.lastUsed = 0;
     }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
 
-    public Date getLastUsed() {
+    public long getLastUsed() {
         return lastUsed;
     }
-    public void setLastUsed(Date lastUsed) {
+
+    public void setLastUsed(long lastUsed) {
         this.lastUsed = lastUsed;
     }
 }
+

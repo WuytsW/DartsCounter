@@ -19,17 +19,10 @@ import com.example.dartscounter.R;
 import com.example.dartscounter.data.ClassicGamePlayer;
 import com.example.dartscounter.data.Player;
 import com.google.android.material.card.MaterialCardView;
-
+import com.example.dartscounter.data.IntentKeys;
 import java.util.ArrayDeque;
 
 public class Classic extends BaseActivity {
-
-    // Intent keys
-    public static final String EXTRA_DOUBLE_OUT = "DoubleOut";
-    public static final String EXTRA_PLAYER_COUNT = "PlayerCount";
-    public static final String EXTRA_START_SCORE = "StartScore";
-    public static final String EXTRA_PLAYER_NAMES = "PlayerNames";
-
     private int multiplier = 1; // 1=single, 2=double, 3=triple
 
     private boolean doubleOut = true;
@@ -84,10 +77,10 @@ public class Classic extends BaseActivity {
 
         // Read extras
         Intent intent = getIntent();
-        doubleOut = intent.getBooleanExtra(EXTRA_DOUBLE_OUT, true);
-        int playerCount = intent.getIntExtra(EXTRA_PLAYER_COUNT, 2);
-        int startScore = intent.getIntExtra(EXTRA_START_SCORE, 501);
-        String[] names = intent.getStringArrayExtra(EXTRA_PLAYER_NAMES);
+        doubleOut = intent.getBooleanExtra(IntentKeys.EXTRA_DOUBLE_OUT, true);
+        int playerCount = intent.getIntExtra(IntentKeys.EXTRA_PLAYER_COUNT, 2);
+        int startScore = intent.getIntExtra(IntentKeys.EXTRA_START_SCORE, 501);
+        String[] names = intent.getStringArrayExtra(IntentKeys.EXTRA_PLAYER_NAMES);
 
 
         players = createPlayers(playerCount, startScore, names);
